@@ -1,4 +1,4 @@
-FROM ubuntu:21.10
+FROM ubuntu:22.04
 
 ENV TZ=America/New_York
 
@@ -9,6 +9,8 @@ RUN apt-get update; \
     apt-get upgrade -y; \
     pip3 install omsdk ; \
     pip3 install ansible ; \
+    pip3 install pywinrm ; \
+    # pip3 install pyvmomi ; \
     ansible-galaxy collection install dellemc.openmanage ; \
     pip3 install --upgrade git+https://github.com/vmware/vsphere-automation-sdk-python.git ; \
     ansible-galaxy collection install chocolatey.chocolatey ; \
